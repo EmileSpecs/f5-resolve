@@ -1,7 +1,7 @@
 {
-  "name": "athlytic-api",
-  "description": "Athlytic app API",
-  "version": "0.0.3",
+  "name": "f5-resolve",
+  "description": "Feathers 5 resolve debug API",
+  "version": "0.0.1",
   "homepage": "",
   "private": true,
   "keywords": [

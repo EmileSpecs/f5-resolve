@@ -1,6 +1,6 @@
-# athlytic-api
+# f5-resolve
 
-> Athlytic app API
+> Feathers 5 resolve debug API
 
 ## About
 
@@ -12,7 +12,7 @@ This project uses [Feathers](http://feathersjs.com). An open source framework fo
 2. Install your dependencies
 
     ```
-    cd path/to/athlytic-api
+    cd path/to/f5-resolve
     npm install
     ```
 
