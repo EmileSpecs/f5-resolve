@@ -15,12 +15,17 @@ This project uses [Feathers](http://feathersjs.com). An open source framework fo
     cd path/to/f5-resolve
     npm install
     ```
+3. Migrate and seed DB
 
-3. Start your app
+    ```
+    npm run migrate
+    npm run seed
+    ```
+
+4. Start your app
 
     ```
     npm run compile # Compile TypeScript source
-    npm run migrate # Run migrations to set up the database
     npm start
     ```
 
