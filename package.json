@@ -1,0 +1,90 @@
+{
+  "name": "athlytic-api",
+  "description": "Athlytic app API",
+  "version": "0.0.3",
+  "homepage": "",
+  "private": true,
+  "keywords": [
+    "feathers"
+  ],
+  "author": {},
+  "contributors": [],
+  "bugs": {},
+  "engines": {
+    "node": ">= 18.18.0"
+  },
+  "feathers": {
+    "language": "ts",
+    "packager": "yarn",
+    "database": "postgresql",
+    "framework": "koa",
+    "transports": [
+      "rest",
+      "websockets"
+    ],
+    "schema": "typebox"
+  },
+  "directories": {
+    "lib": "src",
+    "test": "test"
+  },
+  "files": [
+    "lib/client.js",
+    "lib/**/*.d.ts",
+    "lib/**/*.shared.js"
+  ],
+  "main": "lib/client",
+  "scripts": {
+    "dev": "nodemon -x ts-node src/index.ts",
+    "compile": "shx rm -rf lib/ && tsc",
+    "start": "node lib/",
+    "prettier": "npx prettier \"**/*.ts\" --write",
+    "mocha": "cross-env NODE_ENV=test mocha test/ --require ts-node/register --recursive --extension .ts --exit",
+    "test": "cross-env NODE_ENV=test npm run migrate && npm run mocha",
+    "bundle:client": "npm run compile && npm pack --pack-destination ./public",
+    "migrate": "knex migrate:latest",
+    "seed": "knex seed:run",
+    "migrate:make": ""
+  },
+  "dependencies": {
+    "@casl/ability": "^6.7.1",
+    "@feathersjs/adapter-commons": "5.0.24",
+    "@feathersjs/authentication": "5.0.24",
+    "@feathersjs/authentication-client": "5.0.24",
+    "@feathersjs/authentication-local": "5.0.24",
+    "@feathersjs/authentication-oauth": "5.0.24",
+    "@feathersjs/configuration": "5.0.24",
+    "@feathersjs/errors": "5.0.24",
+    "@feathersjs/feathers": "5.0.24",
+    "@feathersjs/knex": "5.0.24",
+    "@feathersjs/koa": "5.0.24",
+    "@feathersjs/schema": "5.0.24",
+    "@feathersjs/socketio": "5.0.24",
+    "@feathersjs/transport-commons": "5.0.24",
+    "@feathersjs/typebox": "5.0.24",
+    "bcryptjs": "^2.4.3",
+    "feathers-authentication-management": "^5.0.1",
+    "feathers-casl": "^2.1.1",
+    "feathers-hooks-common": "^8.1.2",
+    "knex": "3.1.0",
+    "pg": "8.11.3",
+    "underscore": "^1.13.6",
+    "winston": "^3.13.0"
+  },
+  "devDependencies": {
+    "@feathersjs/cli": "5.0.24",
+    "@feathersjs/rest-client": "5.0.24",
+    "@types/mocha": "10.0.6",
+    "@types/node": "20.11.26",
+    "@types/underscore": "^1.11.15",
+    "axios": "1.6.7",
+    "cross-env": "^7.0.3",
+    "mocha": "10.3.0",
+    "nodemon": "^3.1.0",
+    "prettier": "^3.2.5",
+    "shx": "0.3.4",
+    "ts-node": "^10.9.2",
+    "type-fest": "^4.15.0",
+    "typescript": "5.4.2"
+  }
+}
